@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<!--
+	formated data listed via {{ *key* }}
+-->
+<html>
+<head>
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Vollkorn+SC" rel="stylesheet">
+		
+</head>
+<body>
+	<style>
+		<!-- fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Vollkorn+SC" rel="stylesheet">
+	</style>
+	
+	<div style="text-align: center; direction: ltr;">
+		<!-- background url -->
+		<div id="tableContainer" style="background-image: url({{ backgroundImage }}); background-size: cover; font-size: 16px; line-height: 1.5em; padding: 10px 1.6em;border: 1px solid #CECECE;display: inline-block;border-radius: 5px;box-shadow: 0px 0px 5px #8a8a8a;">
+			<table id="container" style="width: auto;max-width: 600px;font-family: 'Vollkorn SC', serif;font-size: 0.9em;word-spacing: 0.5em;border-collapse: collapse;">
+				<tr class="header">
+					<td style="text-align: left;border-bottom: 1px solid #CECECE;font-size: 1em;">
+						<!-- logo url -->
+						<img height="50px" src="{{ logo }}">
+					</td>
+					<td class="rightText" style="padding: 15px 0px; font-style: italic; font-weight: 600; color: #4e4e4e; text-align: right;border-bottom: 1px solid #CECECE;font-size: 1em;">
+						Reporting System
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="borderBottom" style="font-size: 0.9em; padding: 5px 0px 0px 0px;position: relative;text-align: center;">
+						<!-- address | apartment number -->
+						A new malfunction reported for <span class="boldedInfo" style="font-weight: 600;font-size: 1.1em;"> {{ address }} </span> - #<span class="boldedInfo" style="font-weight: 600;font-size: 1.1em;">{{ apartmentNumber }}</span>
+						<div class="bottomBorder" style="width: 80%; margin-left: 10%; margin-top: 5px; left: 10%; height: 1px; bottom: 0px; background: #dcdcdc; position: absolute;"></div> 
+					</td>
+				</tr>
+				<tr class="description">
+					<td colspan="2" class="borderBottom" style="position: relative;text-align: center;padding: 15px 0px;">
+						<div style="text-align: left;display: inline-block;">
+							<span class="boldedHeaderSmall" style="font-weight: 600;font-size: 0.9em;">Location</span>
+							<!-- location -->
+							<span class="smallInfo" style="padding-left: 15px;font-weight: 200;font-size: 0.9em;display: block;">{{ malfunctionLocation }}</span>
+							<span class="boldedHeaderSmall" style="font-weight: 600;font-size: 0.9em;">when &amp; how</span>
+							<!-- when and how -->
+							<span class="smallInfo" style="padding-left: 15px;font-weight: 200;font-size: 0.9em;display: block;">{{ whenAndHow }}</span>
+							<br>
+							<span class="boldedHeaderSmall" style="font-weight: 600;font-size: 0.9em;">Description</span>
+							<br>
+							<!-- malfunction description -->
+							<span class="smallInfo" style="padding-left: 15px;font-weight: 200;font-size: 0.9em;display: block;">{{ malfunctionDescription }}</span>
+							<div class="bottomBorder" style="width: 80%; margin-left: 10%; margin-top: 5px; left: 10%; height: 1px; bottom: 0px; background: #dcdcdc; position: absolute;"></div>
+						</div>
+					</td>
+				</tr>
+				<tr style="vertical-align: top;">
+					<td class="contactInfo" style="text-align: center;width: 50%;padding-top: 10px;">
+						<span class="boldedHeaderSmall" style="font-weight: 600;font-size: 0.9em;">Reported By</span>
+						<br>
+						<!-- resident name -->
+						<span class="name" style="font-size: 0.8em;font-weight: 200;padding-left: 15px;">{{ residentName }}</span>
+						<br>
+						<!-- contact info -->
+						<span class="number" style="font-size: 0.9em;font-weight: 200;padding-left: 15px;">{{ contactInfo }}</span>
+					</td>
+					<td class="preferedTime" style="text-align: center;width: 50%;padding-top: 10px;">
+						<span class="boldedHeaderSmall" style="font-weight: 600;font-size: 0.9em;">Prefered Time</span>
+						<br>
+						<!-- prefered day -->
+						<span class="dayInfo" style="font-size: 0.8em;font-weight: 200;padding-left: 15px;">{{ preferedDays }}</span>
+						<br>
+						<!-- prefered time || as needed number only style -->
+						<span class="timeInfo" style="{{ numberOnlyCss }}">{{ preferedTime }}</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="padding-top: 25px;text-align: center;">
+						<!-- urgency value -->
+						Urgency <span id="urgencyValue" style="font-size: 1em;color: #bda117;font-family: Open sans-serif;font-weight: 600;">{{ urgencyLevel }}</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center;">
+						<div id="urgencyMeter" style="width: 100%;height: 5px;border-radius: 2px;border: 1px solid #d0d0d0;position: relative;background: linear-gradient(to right, #60aa5c 0%,#eaca2c 42%,#ff3232 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#60aa5c', endColorstr='#ff3232',GradientType=1 );text-align: left;display: inline-block;">
+							<!-- urgency meter: width = (100 -value*10)% -->
+							<div class="urgencyDisplayedVal" style="width: {{ urgencyMeter }}%; height: 100%; display: inline-block; position: relative; float: right; background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 100%); background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 100%); background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );"></div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

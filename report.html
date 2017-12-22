@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Submit Your Report</title>
+	
+	<!--	~~~Favicon~~~	-->
+	<link rel="icon" href="Images/logo/Small.png">
+	
+	<!--	~~~stylesheets~~~	-->
+	<link rel="stylesheet" href="Styles/style.css" />
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Vollkorn+SC" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+	
+	<!--	~~~jQuery~~~	-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	
+	<!-- ~~~SweetAlert~~~ -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.5/sweetalert2.all.min.js"></script>
+	
+	<!--	~~~Main Script~~~	-->
+	<script type="text/javascript" src="js/main.js"></script>
+	
+	<!--	~~~InputUploader~~~	-->
+	<script type="text/javascript" src="InputUploader/InputUploader.js"></script>
+	<script type="text/javascript" src="InputUploader/ImageResizer.js"></script>
+	<script type="text/javascript" src="InputUploader/object-watch.js"></script>
+	<link rel="stylesheet" href="InputUploader/InputUploader.css" />
+	
+	<!--	~~~fontawesome~~~	-->
+	<script src="https://use.fontawesome.com/109a8629b0.js"></script>
+	
+	<!-- ~~ Captcha ~~ -->
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	
+</head>
+<body>
+	<div id="backgroundImage"></div>
+	<div id="pageContainer">
+		<div id="infoBubble">
+			<h1>Dear Resident</h1>
+			<p> In order to give you the most complete service possible, we need you to fill out this report thoroughly and descrive the issue in depth.</p>
+			<p>Our dedicated professional maintenance team would do their utmost best to take care of the issue as fast as possible. </p>
+		</div>
+		
+		<div id="malfunctionReportForm">
+			<div class="formHeader">
+				<div id="logo">
+					<img height="50px" src="Images/logo/Small.png"/>
+				</div>
+				<div id="logoHeader">
+					Reporting System
+				</div>
+			</div>
+			<div id="formContent">
+				
+				<div id="basicInfoWrapper">
+					<div class="basicInfoLine">
+						<div class="inputWrapper">
+							<label class="report-label" for="address">Building Name / Address </label>
+							<input id="address" type="text">
+						</div>
+						<div class="inputWrapper">
+							<div class="floatBlockRight">
+								<label class="report-label" for="apartmentNumber">Apartment Number </label>
+								<input id="apartmentNumber" type="text"/>
+							</div>	
+						</div>
+					</div>
+					<div class="basicInfoLine">
+						<div class="inputWrapper firstInLine">
+							<label class="report-label" for="residentName">Resident Name </label>
+							<input id="residentName" type="text"/>
+						</div>
+						<div class="inputWrapper">
+							<div class="floatBlockRight">
+								<label class="report-label" for="contactInfo">Contact Info </label>
+								<input id="contactInfo" type="text"/>
+							</div>
+						</div>
+					</div>
+				</div>
+					
+				  
+				<div class="inputWrapper">
+					<label class="report-label" for="malfunctionLocation">Malfunction Location</label>
+					<select id="malfunctionLocation">
+						<option value="-" selected>-</option>
+						<option value="Sleeping Room 1">Sleeping Room 1</option>
+						<option value="Sleeping Room 2">Sleeping Room 2</option>
+						<option value="Hall">Hall</option>
+						<option value="Living room">Living room</option>
+						<option value="Kitchen">Kitchen</option>
+						<option value="Bathroom">Bathroom</option>
+					</select>
+				</div>
+				  
+				<div class="inputWrapper">
+					<span class="lineHeader">Prefered Time </span>
+					
+					<div>
+						<label class="report-label" id="asapLabel" for="asSoonAsPossible">As Soon as Possible </label>
+						<input id="asSoonAsPossible" type="checkbox" onchange="disregardTime(this.checked)"/>
+					</div>
+					
+					<div>
+						<div id="daySelectorWrapper">
+							<input  id="Mon" type="checkbox" value="Mon"/>
+							<label for="Mon" class="weekDayOption noBorderLeft">Mon</label>
+							<input  id="Tue" type="checkbox" value="Tue"/>
+							<label for="Tue" class="weekDayOption">Tue</label>
+							<input  id="Wed" type="checkbox" value="Wed"/>
+							<label for="Wed" class="weekDayOption">Wed</label>
+							<input  id="Thu" type="checkbox" value="Thu"/>
+							<label  for="Thu" class="weekDayOption">Thu</label>
+							<input  id="Fri" type="checkbox" value="Fri"/>
+							<label for="Fri" class="weekDayOption lastDay">Fri</label>
+							<!-- unrelevent days
+								<input  id="Sat" type="checkbox" value="Sat"/>
+								<label for="Sat" class="weekDayOption">Sat</label>
+								<input  id="Sun" type="checkbox" value="Sun"/>
+								<label for="Sun" class="weekDayOption lastDay">Sun</label>
+							-->
+						</div>
+						
+						<!-- todo: check correct format in case of fallback to text -->
+						<div id="preferedTime">
+							<input id="fromPreferedTime" type="time"/>
+							<span> - </span>
+							<input id="toPreferedTime" type="time"/>
+						</div>
+					</div>
+				</div>
+				
+				<div class="inputWrapper">
+					<label class="report-label" class="report-label" for="whenAndHow">Describe when & how the problem happend  </label>
+					<textarea class="report-textarea" id="whenAndHow"></textarea>
+				</div>
+				
+				<div class="inputWrapper" id="inptUpldr">
+					<label class="report-label" for="malfunctionDescription">Malfunction Description </label>
+					<!--<textarea class="report-textarea" id="malfunctionDescription"></textarea>-->
+				</div>
+				 
+				<div class="inputWrapper">
+					<label  class="report-label" for="urgencyLevel">Urgency level </label>
+					<input id="urgencyLevel" type="range" step="1" min="1" max="10" oninput="setRangeLabelValue(this)" onchange="setRangeLabelValue(this)"/>
+					<span class="rangeValue"></span>
+				</div>
+				
+				<div id="submitWrapper">
+					<div class="g-recaptcha" data-sitekey="6Ldj_z0UAAAAAJPNfuYq7w92cDXw8X_ds2FgQvJP" data-callback="submitReport" data-size="invisible"></div>
+					<button id="submitReport" onClick="formValidation()">Submit</button>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

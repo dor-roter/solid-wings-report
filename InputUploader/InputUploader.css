@@ -1,0 +1,243 @@
+@import 'scrollbar.css';
+
+@media only screen and (max-device-width: 480px) {
+	.inptUpldr-wrapper 
+	{
+		width: 100% !important;
+	}
+}
+
+.inptUpldr-wrapper 
+{
+	position: relative;
+	border: 1px solid #CECECE;
+	border-radius: 2px;
+	overflow: hidden;
+	display: inline-block;
+}
+
+/* - Upload Tab - */
+
+.inptUpldr-upload 
+{
+	display: block;
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+	left: 5%;
+	width: 90%;
+    border-radius: 0px 0px 2px 2px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.65);;
+	background-color: rgba(255, 255, 255, 0.85);
+	min-height: 15px;
+}
+
+.inptUpldr-upload input
+{
+	display: none;
+}
+		
+.inptUpldr-upload label
+{
+	font-size: 0.65em;
+	cursor: pointer;
+	padding: 1px 10px;
+	display: table-cell;
+	white-space: nowrap;
+	color: #676767;
+	font-weight: 600;
+}
+
+/* - hidden input - */
+
+.inptUpldr-input 
+{
+	position: relative;
+	top: 20px;
+	border: none;
+	resize: none;
+	outline: none;
+	padding: 5px 7px;
+	box-sizing:border-box;
+	width: 100%;
+}
+
+.inptUpldr-borderSeperate
+{
+	width: 95%;
+	height: 1px;
+	background-color: #CECECE;
+	display: block;
+	margin: auto;
+}
+
+.inptUpldr-topShadow
+{
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	top: -1px;
+	background: #d2d2d2;
+	box-shadow: 0px 0px 7px #505050;
+}
+	
+/* - thumbnail gallery - */
+.inptUpldr-previewGallery
+{
+	text-align: right;
+	display: table-cell;
+	width: 100%;
+	padding-right: 10px;
+}
+
+.inptUpldr-previewGallery img 
+{
+	height: 10px;
+	padding: 5px 2px;
+	vertical-align: middle;
+	cursor: pointer;
+	
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	-ms-transition: all 0.1s ease;
+	-o-transition: all 0.1s ease;
+	transition: all 0.1s ease;
+}
+
+.inptUpldr-thumbnailContainer 
+{
+	display: inline-block;
+	position: relative;
+}
+	
+.inptUpldr-thumbnailOverlay 
+{	
+	position: absolute;
+	top: -2px;
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+	
+	opacity: 0;
+	
+	-webkit-transition: opacity 0.1s ease;
+	-moz-transition: opacity 0.1s ease;
+	-ms-transition: opacity 0.1s ease;
+	-o-transition: opacity 0.1s ease;
+	transition: opacity 0.1s ease;
+}
+		
+.inptUpldr-thumbnailOverlay i 
+{
+	position: relative;
+	left: 2px;
+	color: #fff;
+	width: 20px;
+	height: 20px;
+	background: rgba(90, 126, 156, 0.8);
+	border-radius: 100%;
+	line-height: 20px;
+	text-align: center;
+	
+	-webkit-transition: transform 0.2s ease;
+	-moz-transition: transform 0.2s ease;
+	-ms-transition: transform 0.2s ease;
+	-o-transition: transform 0.2s ease;
+	transition: transform 0.2s ease;
+	
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	-ms-transform: scale(0.7);
+	-o-transform: scale(0.7);
+	transform: scale(0.7);
+}
+
+/* - Hovered input tab - show overlay  - */
+.inptUpldr-upload:hover .inptUpldr-thumbnailOverlay
+{
+	opacity: 1;
+}
+
+/* - Fixed thumbnail style - */
+.inptUpldr-tumbnail-top-overlay .inptUpldr-thumbnailOverlay
+{
+	opacity: 1 !important;
+}
+
+/* - Hovered top overlay thumbnail - */
+.inptUpldr-thumbnailOverlay:hover i
+{
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+}
+
+
+/* - Clicked uploader tab - */
+.inptUpldr-upload.inptUpldr-clicked label
+{
+	padding: 20px 10px;
+	font-size: 0.75em;
+}
+	
+.inptUpldr-upload.inptUpldr-clicked .inptUpldr-previewGallery img
+{
+	height: 30px;
+	padding: 7px 2px;
+}
+
+/* - Hovered uploader tab - */	
+.inptUpldr-upload:hover label
+{
+	color: #47586b;
+}
+
+.inptUpldr-upload:hover > .inptUpldr-previewGallery img 
+{
+	height: 30px;
+	padding: 7px 2px;
+}
+
+/* - Hovered thumbnail - */
+.inptUpldr-thumbnailContainer:hover .inptUpldr-thumbnailOverlay
+{
+	opacity: 1;
+}
+
+/* - Simplfied style - */
+.inptUpldr-simplfy .inptUpldr-upload 
+{
+	display: none !important;
+}
+
+/* - Simplfied style - */
+.inptUpldr-simplfy .inptUpldr-input  
+{
+	height: 100% !important;
+	margin-top: 0px !important;
+	top: 0px !important;
+}
+
+
+
+
+/* - animations - */
+.inptUpldr-animate
+{
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+		
+.inptUpldr-animate-short
+{
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	-ms-transition: all 0.1s ease;
+	-o-transition: all 0.1s ease;
+	transition: all 0.1s ease;
+}

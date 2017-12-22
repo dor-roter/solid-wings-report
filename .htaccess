@@ -1,0 +1,29 @@
+# Disable the server signature 
+#ServerSignature Off
+
+# index page
+DirectoryIndex report.html
+
+# prevent file listing
+Options -Indexes
+
+# Prevent access to .htaccess
+<Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
+
+# Block access to log files
+<Files log.txt>
+Order Allow,Deny
+Deny from all
+</Files>
+
+# remove the url .html extension
+RewriteEngine on
+
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]

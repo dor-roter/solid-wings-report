@@ -1,0 +1,366 @@
+@media only screen and (max-device-width: 480px) {
+	#infoBubble {
+		margin-top: 5px !important;
+	}
+	
+	#malfunctionReportForm {
+		background: rgba(255,255,255,0.9) !important;
+		margin-top: 0px !important;
+	}
+	
+	#malfunctionReportForm #formContent {
+		padding-left: 0px !important;
+	}
+	
+	.floatBlockRight {
+		float: none !important;
+		text-align: center !important;
+		width: auto !important; 
+	}
+  
+	.basicInfoLine {
+		text-align: center !important;
+	}
+  
+	.basicInfoLine .inputWrapper {
+		width: auto !important;
+		min-width: 220px !important;
+	}
+  
+	#malfunctionReportForm .inputWrapper .report-label,
+	#malfunctionReportForm .inputWrapper .lineHeader {
+		white-space: initial !important; 
+	}
+	
+	.inputWrapper, #submitWrapper {
+		text-align: center !important;
+	}
+	
+	#malfunctionReportForm .inputWrapper .report-textarea {
+		width: 100% !important;
+	}
+	
+	#malfunctionLocation {
+		margin-bottom: 20px !important;
+	}
+	
+	#preferedTime {
+		margin: 15px auto !important;
+	}
+	
+	#basicInfoWrapper {
+		width: auto !important;
+	}
+	
+	#submitReport {
+		margin-right: 0px !important;
+	}
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+	display: table;
+}
+
+#backgroundImage {
+	background-image: url(../Images/building.jpg);
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+	filter: blur(2px);
+	opacity: 0.5;
+	margin: 0px;
+}
+
+#pageContainer {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1%;
+	display: table-cell;
+	height: 100%;
+	vertical-align: middle;
+}
+
+#infoBubble {
+	max-width: 470px;
+	width: auto;
+	display: inline-block;
+	font-family: 'Slabo 27px', serif;
+	background: rgba(255,255,255,0.8);
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #CECECE;
+	box-shadow: 0px 0px 5px #8a8a8a;
+	text-align: left;
+	vertical-align: top;
+	margin-bottom: 5px;
+}
+
+#infoBubble h1, #infoBubble p {
+	width: 90%;
+	margin-left: auto;
+	margin-right: AUTO;
+}
+
+#malfunctionReportForm {
+	background: white;
+	text-align: left;
+	padding: 10px 30px;
+	border: 1px solid #CECECE;
+	display: inline-block;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px #8a8a8a;
+}
+
+#malfunctionReportForm .formHeader {
+	font-family: 'Vollkorn SC', serif;
+	display: table;
+	width: 100%;
+	border-bottom: 1px solid #CECECE;
+}
+
+#malfunctionReportForm .formHeader div {
+	display: table-cell;
+	vertical-align: middle;
+	width: 50%;
+}
+
+#malfunctionReportForm .formHeader #logoHeader {
+	text-align: right;
+	font-size: 0.9em;
+	word-spacing: 0.5em;
+}
+
+#malfunctionReportForm #formContent {
+	display: table-cell;
+	padding-left: 20px;
+}
+
+#basicInfoWrapper {
+	width: 500px;
+}
+
+#basicInfoWrapper td {
+	width: 50%;
+}
+
+#malfunctionReportForm .inputWrapper {
+	vertical-align: top;
+	margin: 10px auto;
+}
+
+.basicInfoLine .inputWrapper {
+	display: inline-block;
+	width: 220px;
+	padding: 1px;
+}
+
+.floatBlockRight {
+	float: right;
+	text-align: left;
+	width: 172px;
+}
+
+#malfunctionReportForm .inputWrapper .report-label,
+#malfunctionReportForm .inputWrapper .lineHeader  {
+	font-family: 'Vollkorn SC', serif;
+	word-spacing: 0.5em;
+	display: block;
+	white-space: nowrap;
+}
+
+#malfunctionReportForm .inputWrapper input, 
+#malfunctionReportForm .inputWrapper .report-textarea {
+	font-family: 'Slabo 27px', serif;
+	font-size: 1em;
+	border: 1px solid #a9a9a9;
+    padding: 2px 1px;
+}
+
+#malfunctionReportForm input[type=time] {
+	max-width: 80px;
+}
+
+#malfunctionReportForm .inputWrapper .report-textarea {
+	width: 450px;
+	height: 100px;
+	line-height: 1.5em;
+	border-radius: 3px;
+	font-family: 'Slabo 27px', serif;
+	resize: none;
+}
+
+#malfunctionReportForm .inputWrapper .inptUpldr-input {
+	line-height: 1.5em;
+	font-size: 1em;
+	font-family: 'Slabo 27px', serif;
+}
+
+#daySelectorWrapper {
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 350px;
+	font-size: 1em;
+	font-weight: 200;
+	position: relative;
+	color: #C2C2C2;
+	padding: 6px 0px;
+    border: 1px solid #d0d0d0;
+    border-radius: 3px;
+	margin-right: 25px;
+}
+
+#daySelectorWrapper label, #asapLabel {
+	font-family: 'Open Sans', sans-serif !important;
+	word-spacing: initial !important;
+	display: initial !important;
+}
+
+#daySelectorWrapper input {
+	display: none;
+}
+
+#daySelectorWrapper .weekDayOption {
+	float: left;
+	padding: 2px 5px;
+	cursor: pointer;
+	
+	transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+}
+
+#daySelectorWrapper .weekDayOption.lastDay {
+	padding-right: 10px;
+}
+
+#daySelectorWrapper .weekDayOption:before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	padding: 2px 5px;
+	border-left: 1px solid;
+	color: #C2C2C2;
+}
+
+#daySelectorWrapper label.noBorderLeft:before {
+	content: "";
+	border-left: none;
+}
+
+#daySelectorWrapper .weekDayOption:hover {
+	color: #000;
+}
+
+#daySelectorWrapper input[type=checkbox]:checked + .weekDayOption{
+	color: #000;
+	font-weight: 600;
+}
+
+#preferedTime {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#malfunctionLocation {
+	font-family: 'Slabo 27px', serif;
+	font-size: 1em;
+	padding: 5px;
+}
+
+label[for=asSoonAsPossible] {
+	font-size: 0.9em;
+	line-height: 2em;
+}
+
+#submitWrapper {
+	text-align: right;
+}
+
+#submitReport {
+	background: none;
+	border: 1px solid #a9a9a9;
+	border-radius: 2px;
+	box-shadow: 0px 0px 2px #adadad;
+	padding: 8px 7px;
+	font-size: 1em;
+	font-family: 'Vollkorn SC', serif;
+	cursor: pointer;
+	margin-right: 20px;
+	margin-bottom: 5px;
+}
+
+.progress 
+{
+	position: relative;
+	margin: 25px auto 0px auto;
+	padding: 0 15px;
+	width: 220px;
+}
+
+.progress-val 
+{
+	position: absolute;
+	font: bold 15px/34px Helvetica, Arial, sans-serif;
+	color: #333;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.progress-bar 
+{
+	display: block;
+	overflow: hidden;
+	height: 8px;
+	background: #b8b8b8;
+	border-radius: 4px;
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2), transparent 60%);
+	background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.2), transparent 60%);
+	background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.2), transparent 60%);
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent 60%);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.6);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.progress-in 
+{
+	display: block;
+	min-width: 8px;
+	height: 8px;
+	background: #1997e6;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 60%, rgba(0, 0, 0, 0) 61%, rgba(0, 0, 0, 0.2)), -webkit-linear-gradient(left, #147cd6, #24c1fc);
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 60%, rgba(0, 0, 0, 0) 61%, rgba(0, 0, 0, 0.2)), -moz-linear-gradient(left, #147cd6, #24c1fc);
+	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 60%, rgba(0, 0, 0, 0) 61%, rgba(0, 0, 0, 0.2)), -o-linear-gradient(left, #147cd6, #24c1fc);
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 60%, rgba(0, 0, 0, 0) 61%, rgba(0, 0, 0, 0.2)), linear-gradient(to right, #147cd6, #24c1fc);
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+/* sweetalert style */
+.swal2-title {
+	font-family: 'Vollkorn SC', serif;
+	word-spacing: 0.4em;
+}
+
+.swal2-content {
+	font-family: 'Open Sans', sans-serif;
+	word-spacing: 0.3em;
+}
+
+.swal2-content small {
+	font-family: 'Slabo 27px', serif;
+}
