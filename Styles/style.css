@@ -225,7 +225,7 @@ body {
 #daySelectorWrapper label, #asapLabel {
 	font-family: 'Open Sans', sans-serif !important;
 	word-spacing: initial !important;
-	display: initial !important;
+	display: inline-block  !important;
 }
 
 #daySelectorWrapper input {

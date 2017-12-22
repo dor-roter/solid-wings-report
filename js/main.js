@@ -25,6 +25,7 @@ $(document).ready(function(){
 		},
 	});
 	
+
 	// If formData object isn't supported don't allow image upload.
 	if(typeof window.FormData === 'undefined') {
 		malfunctionDescription.simplfy(true);
@@ -124,7 +125,7 @@ function formDataSubmit (recaptchaResponse) {
 		contentType: false,
 		beforeSend: function () {
 			// If there are files to be uploaded initialize progress bar.
-			if (this.data.get("malfunctionImages[]") !== null) {
+			if (malfDesc.files.length) {
 				progressBar();
 			}
 			else {

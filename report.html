@@ -20,6 +20,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	
 	<!-- ~~~SweetAlert~~~ -->
+	<!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.5/sweetalert2.all.min.js"></script>
 	
 	<!--	~~~Main Script~~~	-->
@@ -153,7 +155,7 @@
 				</div>
 				
 				<div id="submitWrapper">
-					<div class="g-recaptcha" data-sitekey="6Ldj_z0UAAAAAJPNfuYq7w92cDXw8X_ds2FgQvJP" data-callback="submitReport" data-size="invisible"></div>
+					<div class="g-recaptcha" data-sitekey="6LfTYDoUAAAAAE4Ia_8GWSgPeKqp-8gYT-LI6OT8" data-callback="submitReport" data-size="invisible"></div>
 					<button id="submitReport" onClick="formValidation()">Submit</button>
 				</div>
 			</div>

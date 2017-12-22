@@ -232,8 +232,13 @@
 	*	@return 
 	*		The added file complete object.
 	*/
-	InputUploader.prototype.addFile = function() {
+	InputUploader.prototype.addFile = function() {		
 		var file = this.inputFiles.files[0];
+
+		// Make sure there was an actual file before continuing (IE issue) 
+		if (file == null) {
+			return;
+		}
 		
 		// Check first -> casues entire array change
 		// If over max file number limit, remove first.
@@ -645,22 +650,12 @@
 		inputLabel.innerHTML = this.options.label;
 		
 		// Set input attributes
-		var onChangeAtt = document.createAttribute("onChange");
-		var typeAtt = document.createAttribute("type");       
-		var multipleAtt = document.createAttribute("multiple");     
-		var acceptAtt = document.createAttribute("accept");      
-		var idAtt = document.createAttribute("id");  
-		var forAtt = document.createAttribute("for");  		
-		typeAtt.value = "file";
-		acceptAtt.value =  this.options.accept;                           
-		idAtt.value =  "inptUpldr-" + this.instanceNum;
-		forAtt.value = idAtt.value;
-		onChangeAtt.value = 
+		this.inputFiles.setAttribute("type", "file");
+		this.inputFiles.setAttribute("accept", this.options.accept);
 		
-		this.inputFiles.setAttributeNode(typeAtt);
-		this.inputFiles.setAttributeNode(acceptAtt);
-		this.inputFiles.setAttributeNode(idAtt);
-		inputLabel.setAttributeNode(forAtt);
+		var inputId = "inptUpldr-" + this.instanceNum;
+		this.inputFiles.setAttribute("id", inputId);
+		inputLabel.setAttribute("for", inputId);
 		
 		this.uploadElm.appendChild(inputLabel);
 		this.uploadElm.appendChild(this.inputFiles);
