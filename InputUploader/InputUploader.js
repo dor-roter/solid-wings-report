@@ -643,7 +643,7 @@
 		var topShadow = document.createElement("div");
 		topShadow.className = "inptUpldr-topShadow";
 		this.uploadElm.appendChild(topShadow);
-		
+				
 		this.inputFiles = document.createElement("input");
 		var inputLabel = document.createElement("label");
 		inputLabel.className = "inptUpldr-animate-short";
@@ -657,8 +657,13 @@
 		this.inputFiles.setAttribute("id", inputId);
 		inputLabel.setAttribute("for", inputId);
 		
+		// Hide the input using container (Safari compatibility issue)
+		var hideInputContainer = document.createElement("div");
+		hideInputContainer.className = "inptUpldr-hideFileInput";
+		
+		hideInputContainer.appendChild(this.inputFiles);
 		this.uploadElm.appendChild(inputLabel);
-		this.uploadElm.appendChild(this.inputFiles);
+		this.uploadElm.appendChild(hideInputContainer);
 		
 		// Create preview gallery element
 		this.previewGallery = document.createElement("div");
