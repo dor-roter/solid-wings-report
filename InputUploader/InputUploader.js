@@ -237,7 +237,7 @@
 
 		// Make sure there was an actual file before continuing (IE issue) 
 		if (file == null) {
-			return;
+			return false;
 		}
 		
 		// Check first -> casues entire array change
@@ -555,7 +555,7 @@
 	function inputEventHandler() {
 		// Add new file to stack from input
 		var file = this.addFile();
-		
+
 		// If file add didn't get rejected
 		if (file != false) {
 			// If over max file limit, re-create preview
